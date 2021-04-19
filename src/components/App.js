@@ -10,13 +10,10 @@ function App() {
     <div className="App">
       <Navbar />
 
-      <div className="container">
+      <div className="container col-12">
         <div className="row">
           <CountriesList countries={countries} />
-
-          <BrowserRouter>
-            <Route path="/countries/:CountryCCA3" component={CountryDetails} />
-          </BrowserRouter>
+          <Route path="/countries/:CountryCCA3" component={CountryDetails} /> 
         </div>
       </div>
     </div>

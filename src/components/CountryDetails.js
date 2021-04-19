@@ -9,12 +9,13 @@ class CountryDetails extends React.Component {
     area: null,
   };
 
-  componentDidMount() {
+  componentDidUpdate = (prevProps) => {
+    console.log(prevProps)
     const country = countries.find((country) => {
       return country.cca3 === this.props.match.params.CountryCCA3;
     });
 
-    if (country) {
+    if (prevProps.match.params.CountryCCA3 !== this.props.match.params.CountryCCA3) {
       this.setState({
         name: country.name.official,
         capital: country.capital,
